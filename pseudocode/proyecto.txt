@@ -6,13 +6,21 @@ Declaración de Variables:
 
 Declaración de Subprocesos:
 
-    Nombre del Subproceso: plus_card(jugador, mensaje_jugador)
+    Nombre del Subproceso: plus_card(isJugador)
     Declaración de Variables:
-        Entero: jugador
-        Cadena: mensaje_jugador
+        Lógico: isJugador
     1.- Inicio
-    2.- Hacer carta=draw_card(), jugador += carta
-    3.- Hacer mensaje_jugador += " " + carta
+    2.- carta = draw_card()
+    3.- Si isJugador Entonces
+            Inicio
+                jugador = jugador + carta
+                mensaje_jugador += " " + carta
+            Fin
+        Si no
+            Inicio
+                máquina = máquina + carta
+                mensaje_maquina += " " + carta
+            Fin
     4.- Fin
 
     Nombre del Subproceso: player_turn()
@@ -57,15 +65,20 @@ Declaración de Subprocesos:
                 Fin
     4.- Fin
 
+    Nombre del Subproceso: initGame()
+    1.- Inicio
+    2.- Escribir "Bienvenido a BlackJack"
+    3.- Hacer jugador=0, máquina=0,
+            mensaje_jugador="El jugador tiene: ",
+            mensaje_maquina="La máquina tiene: "
+    4.- Hacer plus_card(true)
+    5.- Hacer plus_card(true)
+    6.- Hacer plus_card(false)
+    7.- Hacer plus_card(false)
+    8.- Fin
+
 1.- Inicio
-2.- Escribir "Bienvenido a BlackJack"
-3.- Hacer jugador=0, máquina=0,
-    mensaje_jugador="El jugador tiene: ",
-    mensaje_maquina="La máquina tiene: "
-4.- Hacer plus_card(jugador, mensaje_jugador)
-5.- Hacer plus_card(jugador, mensaje_jugador)
-6.- Hacer plus_card(máquina, mensaje_maquina)
-7.- Hacer plus_card(máquina, mensaje_maquina)
-8.- Hacer player_turn()
-9.- Hacer machine_turn()
-10.- Fin
+2.- Hacer initGame()
+3.- Hacer player_turn()
+4.- Hacer machine_turn()
+5.- Fin
