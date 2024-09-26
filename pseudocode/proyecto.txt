@@ -10,16 +10,16 @@ Declaración de Subprocesos:
     Declaración de Variables:
         Lógico: isJugador
     1.- Inicio
-    2.- carta = draw_card()
+    2.- Hacer carta = draw_card()
     3.- Si isJugador Entonces
             Inicio
-                jugador = jugador + carta
-                mensaje_jugador += " " + carta
+                Hacer jugador += carta
+                Hacer mensaje_jugador += " " + carta
             Fin
         Si no
             Inicio
-                máquina = máquina + carta
-                mensaje_maquina += " " + carta
+                Hacer máquina += carta
+                Hacer mensaje_maquina += " " + carta
             Fin
     4.- Fin
 
@@ -30,9 +30,10 @@ Declaración de Subprocesos:
         Escribir "Desea otra carta? (s/n)"
         Leer respuesta
         Si respuesta = "s" Entonces
-            plus_card(jugador, mensaje_jugador)
+            Hacer plus_card(true)
             Escribir mensaje_jugador
         Si no
+            // Romper implica salir del bucle o bloque repetitivo
             Romper
         Si jugador > 21 Entonces
             Inicio
