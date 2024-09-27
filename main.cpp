@@ -24,12 +24,14 @@ int drawCard() {
 }
 
 void plusCardPlayer() {
+
     card = drawCard();
     player += card;
     playerMessage += " " + to_string(card);
 }
 
 void plusCardDealer() {
+
     card = drawCard();
     dealer += card;
     dealerMessage += " " + to_string(card);
@@ -47,7 +49,6 @@ void plusCard(bool isPlayer) {
     (isPlayer) ? plusCardPlayer() : plusCardDealer();
 }
 
-
 /**
  *
  *
@@ -59,31 +60,33 @@ void printData(bool isPlayer) {
     cout << message << endl;
 }
 
+void isPlayerWinner() {
+
+    if (player > 21)
+        cout << "¡Perdiste!" << endl;
+    else if (player == 21)
+        cout << "¡Ganaste la partida!" << endl;
+}
+
+bool playerWantCard() {
+
+    char option;
+    cout << "Deseas otra carta (y/n)" << endl;
+    cin >> option;
+    return option == 'y';
+}
+
 void playerTurn() {
 
     printData(true);
-    char option;
-    while (player < 21) {
-        // Imprimimos en consola la pregunta de más cartas
-        cout << "Deseas otra carta (y/n)" << endl;
-        // Leemos la selección del jugador
-        cin >> option;
-        // Control de robo de carta
-        if (option == 'y') {
-            // Aumentamos la mano del jugador
+    do {
+        if (!playerWantCard()) break;
+        else {
             plusCard(true);
-            // Imprimimos la nueva mano del jugador
             printData(true);
-        } else {
-            // Salir del bloque While
-            break;
+            isPlayerWinner();
         }
-        // Control de ganador
-        if (player > 21)
-            cout << "¡Perdiste!" << endl;
-        else if (player == 21)
-            cout << "¡Ganaste la partida!" << endl;
-    }
+    } while (player < 21);
 }
 
 void dealerTurn() {
