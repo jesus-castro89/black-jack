@@ -1,11 +1,8 @@
 Nombre del Algoritmo: BlackJack
-
 Declaración de Variables:
-    Entero: jugador, máquina, carta
-    Cadena: mensaje_jugador, mensaje_maquina
-
+        Entero: jugador, máquina, carta
+        Cadena: mensaje_jugador, mensaje_maquina
 Declaración de Subprocesos:
-
     Nombre del Subproceso: plus_card(isJugador)
     Declaración de Variables:
         Lógico: isJugador
@@ -27,25 +24,27 @@ Declaración de Subprocesos:
     1.- Inicio
     2.- Escribir mensaje_jugador
     3.- Mientras jugador < 21 Hacer
-        Escribir "Desea otra carta? (s/n)"
-        Leer respuesta
-        Si respuesta = "s" Entonces
-            Hacer plus_card(true)
-            Escribir mensaje_jugador
-        Si no
-            // Romper implica salir del bucle o bloque repetitivo
-            Romper
-        Si jugador > 21 Entonces
-            Inicio
-                Escribir "Perdiste"
+            Escribir "Desea otra carta? (s/n)"
+            Leer respuesta
+            // Bloque de decisión para saber si el jugador desea otra carta
+            Si respuesta = "s" Entonces
+                Hacer plus_card(true)
+                Escribir mensaje_jugador
+            Si no
+                // Romper implica salir del bucle o bloque repetitivo
                 Romper
-            Fin
-        Si no
-            Si jugador = 21 Entonces
+            // Bloque de decisión para saber si el jugador ganó o perdió
+            Si jugador > 21 Entonces
                 Inicio
-                    Escribir "Ganaste"
+                    Escribir "Perdiste"
                     Romper
                 Fin
+            Si no
+                Si jugador = 21 Entonces
+                    Inicio
+                        Escribir "Ganaste"
+                        Romper
+                    Fin
     4.- Fin
 
     Nombre del Subproceso: machine_turn()
@@ -69,9 +68,11 @@ Declaración de Subprocesos:
     Nombre del Subproceso: initGame()
     1.- Inicio
     2.- Escribir "Bienvenido a BlackJack"
+    // Inicializar las variables
     3.- Hacer jugador=0, máquina=0,
             mensaje_jugador="El jugador tiene: ",
             mensaje_maquina="La máquina tiene: "
+    // Se repite 2 veces para que el jugador y la máquina tengan 2 cartas
     4.- Hacer plus_card(true)
     5.- Hacer plus_card(true)
     6.- Hacer plus_card(false)
@@ -79,6 +80,7 @@ Declaración de Subprocesos:
     8.- Fin
 
 1.- Inicio
+// Llamada a los subprocesos
 2.- Hacer initGame()
 3.- Hacer player_turn()
 4.- Hacer machine_turn()
