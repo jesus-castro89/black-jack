@@ -1,27 +1,51 @@
-// Librerías de nuestro proyecto
 #include <iostream>
 #include <random>
 #include <string>
 #include <algorithm>
-// Espacio de nombres a utilizar
+
+import enums;
+import card;
 using namespace std;
-// Variables globales
-// Puntajes del Jugador y el Dealer
+
+/**
+ * @brief Ganador del juego
+ */
+Winner winner;
+/**
+ * @brief Puntaje del jugador
+ */
 int player = 0;
+/**
+ * @brief Puntaje del dealer
+ */
 int dealer = 0;
-// Mensajes del Jugador y el Dealer
+/**
+ * @brief Mensaje de las cartas del jugador
+ */
 string playerMessage = "Las cartas del jugador son: ";
+/**
+ * @brief Mensaje de las cartas del dealer
+ */
 string dealerMessage = "Las cartas del dealer son: ";
-// Arreglo de cartas
-int cards[52];
-// Enumeración de las figuras
-enum Figure {
-    HEARTS = 1,
-    DIAMONDS,
-    SPADES,
-    CLUBS
-};
-// Funciones
+/**
+ * @brief Arreglo de cartas
+ */
+Card cards[52]{};
+
+/**
+ * @brief Función que imprime el ganador del juego
+ *
+ * @code
+ * printWinner();
+ * @endcode
+ */
+void printWinner() {
+
+    string message = winner == PLAYER ? "Haz Ganado" :
+                     (winner == DEALER ? "Haz Perdido" : "Empate");
+    cout << message << endl;
+}
+
 /**
  * @brief Función que crea un mazo de cartas
  *
@@ -30,35 +54,46 @@ enum Figure {
  * @endcode
  */
 void createDeck() {
-    // Inicializamos el valor de las cartas en 2
-    int cardValue = 2;
-    // Inicializamos el contador de cartas en 0
-    int cardCount = 0;
-    // Iteramos sobre las figuras (Corazones, Diamantes, Picas y Tréboles)
-    for (int figure = HEARTS; figure <= CLUBS; figure++) {
-        // Iteramos sobre las cartas del 2 al As
-        // Siendo un total de 13 cartas
-        for (int card = 1; card <= 13; card++) {
-            switch (card) {
-                case 10:// J
-                case 11:// Q
-                case 12:// K
-                    cardValue = 10;
+
+    int index = 0;
+    Suite suite = HEARTS;
+    for (int i = 1; i <= 4; i++) {
+
+        switch (i) {
+            case 1:
+                suite = HEARTS;
+                break;
+            case 2:
+                suite = DIAMONDS;
+                break;
+            case 3:
+                suite = SPADES;
+                break;
+            case 4:
+                suite = CLUBS;
+                break;
+        }
+        for (int j = 1; j <= 13; j++) {
+
+            switch (j) {
+                case 10:
+                    cards[index] = Card(suite, J);
                     break;
-                case 13:// A
-                    cardValue = 11;
+                case 11:
+                    cards[index] = Card(suite, Q);
                     break;
-                default:// 2 al 9
+                case 12:
+                    cards[index] = Card(suite, K);
+                    break;
+                case 13:
+                    cards[index] = Card(suite, A);
+                    break;
+                default:
+                    cards[index] = Card(suite, j + 1);
                     break;
             }
-            // Guardamos el valor de la carta en el arreglo
-            cards[cardCount] = cardValue;
-            // Incrementamos el contador de cartas
-            cardCount++;
-            cardValue++;
+            index++;
         }
-        // Reiniciamos el valor de la carta por cada figura
-        cardValue = 2;
     }
 }
 
@@ -85,7 +120,7 @@ void shuffleDeck() {
  *
  * @return int La carta que se sacó del mazo
  */
-int drawCard() {
+Card drawCard() {
 
     random_device rd;
     mt19937 gen(rd());
@@ -109,38 +144,55 @@ int drawCard() {
  */
 void plusCard(bool isPlayer) {
 
-    int card = drawCard();
+    Card card = drawCard();
     if (isPlayer) {
-        player += card;
-        playerMessage += " " + to_string(card);
+
+        player += card.value;
+        playerMessage += " " + card.figure + card.getSuite();
     } else {
-        dealer += card;
-        dealerMessage += " " + to_string(card);
+        dealer += card.value;
+        dealerMessage += " " + card.figure + card.getSuite();
     }
 }
 
+/**
+ * @brief Función que muestra las cartas del jugador o del dealer
+ *
+ * @param isPlayer Booleano que indica si se muestran las cartas del jugador o del dealer
+ *
+ * @code
+ * showCards(true);
+ * @endcode
+ *
+ * @code
+ * showCards(false);
+ * @endcode
+ */
 void showCards(bool isPlayer) {
 
     cout << ((isPlayer) ? playerMessage : dealerMessage) << endl;
 }
 
-void winner() {
+/**
+ * @brief Función que determina el ganador del juego
+ */
+void howIsWinner() {
 
     if (player > 21) {
-        cout << "Haz Perdido" << endl;
-    } else if (player == 21) {
-        cout << "Haz Ganado" << endl;
+        winner = DEALER;
     } else {
-        if (player > dealer) {
-            cout << "Haz Ganado" << endl;
-        } else if (player < dealer) {
-            cout << "Haz Perdido" << endl;
+        if (player == 21) {
+            winner = PLAYER;
         } else {
-            cout << "Empate" << endl;
+            winner = player > dealer ? PLAYER :
+                     (player < dealer ? DEALER : DRAW);
         }
     }
 }
 
+/**
+ * @brief Función que inicializa el juego
+ */
 void initGame() {
 
     createDeck();
@@ -156,6 +208,7 @@ void initGame() {
 int main() {
 
     initGame();
-    winner();
+    howIsWinner();
+    printWinner();
     return 0;
 }
