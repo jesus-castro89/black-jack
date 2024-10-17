@@ -1,15 +1,14 @@
 #include <string>
-
-export module card;
-
-import enums;
+#include <utility>
+#include "enums.h"
 
 using namespace std;
 
-export struct Card {
+struct Card {
     int value;
     Suite suite;
     Figure figure;
+    bool isTaken = false;
 
     Card() {
         suite = Suite::HEARTS;
