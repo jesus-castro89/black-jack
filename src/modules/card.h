@@ -1,4 +1,0 @@
-#ifndef BLACK_JACK_CARD_H
-#define BLACK_JACK_CARD_H
-
-#endif //BLACK_JACK_CARD_H

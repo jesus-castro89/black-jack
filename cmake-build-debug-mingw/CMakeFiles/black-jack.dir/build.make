@@ -82,51 +82,83 @@ CMakeFiles/black-jack.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/black-jack.dir/src/main.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\C++\black-jack\src\main.cpp -o CMakeFiles\black-jack.dir\src\main.cpp.s
 
-CMakeFiles/black-jack.dir/src/modules/enums.cpp.obj: CMakeFiles/black-jack.dir/flags.make
-CMakeFiles/black-jack.dir/src/modules/enums.cpp.obj: D:/C++/black-jack/src/modules/enums.cpp
-CMakeFiles/black-jack.dir/src/modules/enums.cpp.obj: CMakeFiles/black-jack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\C++\black-jack\cmake-build-debug-mingw\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/black-jack.dir/src/modules/enums.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/black-jack.dir/src/modules/enums.cpp.obj -MF CMakeFiles\black-jack.dir\src\modules\enums.cpp.obj.d -o CMakeFiles\black-jack.dir\src\modules\enums.cpp.obj -c D:\C++\black-jack\src\modules\enums.cpp
+CMakeFiles/black-jack.dir/src/card.cpp.obj: CMakeFiles/black-jack.dir/flags.make
+CMakeFiles/black-jack.dir/src/card.cpp.obj: D:/C++/black-jack/src/card.cpp
+CMakeFiles/black-jack.dir/src/card.cpp.obj: CMakeFiles/black-jack.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\C++\black-jack\cmake-build-debug-mingw\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/black-jack.dir/src/card.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/black-jack.dir/src/card.cpp.obj -MF CMakeFiles\black-jack.dir\src\card.cpp.obj.d -o CMakeFiles\black-jack.dir\src\card.cpp.obj -c D:\C++\black-jack\src\card.cpp
 
-CMakeFiles/black-jack.dir/src/modules/enums.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/black-jack.dir/src/modules/enums.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\C++\black-jack\src\modules\enums.cpp > CMakeFiles\black-jack.dir\src\modules\enums.cpp.i
+CMakeFiles/black-jack.dir/src/card.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/black-jack.dir/src/card.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\C++\black-jack\src\card.cpp > CMakeFiles\black-jack.dir\src\card.cpp.i
 
-CMakeFiles/black-jack.dir/src/modules/enums.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/black-jack.dir/src/modules/enums.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\C++\black-jack\src\modules\enums.cpp -o CMakeFiles\black-jack.dir\src\modules\enums.cpp.s
+CMakeFiles/black-jack.dir/src/card.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/black-jack.dir/src/card.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\C++\black-jack\src\card.cpp -o CMakeFiles\black-jack.dir\src\card.cpp.s
 
-CMakeFiles/black-jack.dir/src/modules/card.cpp.obj: CMakeFiles/black-jack.dir/flags.make
-CMakeFiles/black-jack.dir/src/modules/card.cpp.obj: D:/C++/black-jack/src/modules/card.cpp
-CMakeFiles/black-jack.dir/src/modules/card.cpp.obj: CMakeFiles/black-jack.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\C++\black-jack\cmake-build-debug-mingw\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/black-jack.dir/src/modules/card.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/black-jack.dir/src/modules/card.cpp.obj -MF CMakeFiles\black-jack.dir\src\modules\card.cpp.obj.d -o CMakeFiles\black-jack.dir\src\modules\card.cpp.obj -c D:\C++\black-jack\src\modules\card.cpp
+CMakeFiles/black-jack.dir/src/player.cpp.obj: CMakeFiles/black-jack.dir/flags.make
+CMakeFiles/black-jack.dir/src/player.cpp.obj: D:/C++/black-jack/src/player.cpp
+CMakeFiles/black-jack.dir/src/player.cpp.obj: CMakeFiles/black-jack.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\C++\black-jack\cmake-build-debug-mingw\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/black-jack.dir/src/player.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/black-jack.dir/src/player.cpp.obj -MF CMakeFiles\black-jack.dir\src\player.cpp.obj.d -o CMakeFiles\black-jack.dir\src\player.cpp.obj -c D:\C++\black-jack\src\player.cpp
 
-CMakeFiles/black-jack.dir/src/modules/card.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/black-jack.dir/src/modules/card.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\C++\black-jack\src\modules\card.cpp > CMakeFiles\black-jack.dir\src\modules\card.cpp.i
+CMakeFiles/black-jack.dir/src/player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/black-jack.dir/src/player.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\C++\black-jack\src\player.cpp > CMakeFiles\black-jack.dir\src\player.cpp.i
 
-CMakeFiles/black-jack.dir/src/modules/card.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/black-jack.dir/src/modules/card.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\C++\black-jack\src\modules\card.cpp -o CMakeFiles\black-jack.dir\src\modules\card.cpp.s
+CMakeFiles/black-jack.dir/src/player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/black-jack.dir/src/player.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\C++\black-jack\src\player.cpp -o CMakeFiles\black-jack.dir\src\player.cpp.s
+
+CMakeFiles/black-jack.dir/src/deck.cpp.obj: CMakeFiles/black-jack.dir/flags.make
+CMakeFiles/black-jack.dir/src/deck.cpp.obj: D:/C++/black-jack/src/deck.cpp
+CMakeFiles/black-jack.dir/src/deck.cpp.obj: CMakeFiles/black-jack.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\C++\black-jack\cmake-build-debug-mingw\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/black-jack.dir/src/deck.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/black-jack.dir/src/deck.cpp.obj -MF CMakeFiles\black-jack.dir\src\deck.cpp.obj.d -o CMakeFiles\black-jack.dir\src\deck.cpp.obj -c D:\C++\black-jack\src\deck.cpp
+
+CMakeFiles/black-jack.dir/src/deck.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/black-jack.dir/src/deck.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\C++\black-jack\src\deck.cpp > CMakeFiles\black-jack.dir\src\deck.cpp.i
+
+CMakeFiles/black-jack.dir/src/deck.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/black-jack.dir/src/deck.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\C++\black-jack\src\deck.cpp -o CMakeFiles\black-jack.dir\src\deck.cpp.s
+
+CMakeFiles/black-jack.dir/src/blackjack.cpp.obj: CMakeFiles/black-jack.dir/flags.make
+CMakeFiles/black-jack.dir/src/blackjack.cpp.obj: D:/C++/black-jack/src/blackjack.cpp
+CMakeFiles/black-jack.dir/src/blackjack.cpp.obj: CMakeFiles/black-jack.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\C++\black-jack\cmake-build-debug-mingw\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/black-jack.dir/src/blackjack.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/black-jack.dir/src/blackjack.cpp.obj -MF CMakeFiles\black-jack.dir\src\blackjack.cpp.obj.d -o CMakeFiles\black-jack.dir\src\blackjack.cpp.obj -c D:\C++\black-jack\src\blackjack.cpp
+
+CMakeFiles/black-jack.dir/src/blackjack.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/black-jack.dir/src/blackjack.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\C++\black-jack\src\blackjack.cpp > CMakeFiles\black-jack.dir\src\blackjack.cpp.i
+
+CMakeFiles/black-jack.dir/src/blackjack.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/black-jack.dir/src/blackjack.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\C++\black-jack\src\blackjack.cpp -o CMakeFiles\black-jack.dir\src\blackjack.cpp.s
 
 # Object files for target black-jack
 black__jack_OBJECTS = \
 "CMakeFiles/black-jack.dir/src/main.cpp.obj" \
-"CMakeFiles/black-jack.dir/src/modules/enums.cpp.obj" \
-"CMakeFiles/black-jack.dir/src/modules/card.cpp.obj"
+"CMakeFiles/black-jack.dir/src/card.cpp.obj" \
+"CMakeFiles/black-jack.dir/src/player.cpp.obj" \
+"CMakeFiles/black-jack.dir/src/deck.cpp.obj" \
+"CMakeFiles/black-jack.dir/src/blackjack.cpp.obj"
 
 # External object files for target black-jack
 black__jack_EXTERNAL_OBJECTS =
 
 black-jack.exe: CMakeFiles/black-jack.dir/src/main.cpp.obj
-black-jack.exe: CMakeFiles/black-jack.dir/src/modules/enums.cpp.obj
-black-jack.exe: CMakeFiles/black-jack.dir/src/modules/card.cpp.obj
+black-jack.exe: CMakeFiles/black-jack.dir/src/card.cpp.obj
+black-jack.exe: CMakeFiles/black-jack.dir/src/player.cpp.obj
+black-jack.exe: CMakeFiles/black-jack.dir/src/deck.cpp.obj
+black-jack.exe: CMakeFiles/black-jack.dir/src/blackjack.cpp.obj
 black-jack.exe: CMakeFiles/black-jack.dir/build.make
 black-jack.exe: CMakeFiles/black-jack.dir/linkLibs.rsp
 black-jack.exe: CMakeFiles/black-jack.dir/objects1.rsp
 black-jack.exe: CMakeFiles/black-jack.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\C++\black-jack\cmake-build-debug-mingw\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable black-jack.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\C++\black-jack\cmake-build-debug-mingw\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable black-jack.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\black-jack.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

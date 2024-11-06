@@ -128,6 +128,78 @@ black-jack/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/build
 .PHONY : black-jack/fast
 
+src/blackjack.obj: src/blackjack.cpp.obj
+.PHONY : src/blackjack.obj
+
+# target to build an object file
+src/blackjack.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/blackjack.cpp.obj
+.PHONY : src/blackjack.cpp.obj
+
+src/blackjack.i: src/blackjack.cpp.i
+.PHONY : src/blackjack.i
+
+# target to preprocess a source file
+src/blackjack.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/blackjack.cpp.i
+.PHONY : src/blackjack.cpp.i
+
+src/blackjack.s: src/blackjack.cpp.s
+.PHONY : src/blackjack.s
+
+# target to generate assembly for a file
+src/blackjack.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/blackjack.cpp.s
+.PHONY : src/blackjack.cpp.s
+
+src/card.obj: src/card.cpp.obj
+.PHONY : src/card.obj
+
+# target to build an object file
+src/card.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/card.cpp.obj
+.PHONY : src/card.cpp.obj
+
+src/card.i: src/card.cpp.i
+.PHONY : src/card.i
+
+# target to preprocess a source file
+src/card.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/card.cpp.i
+.PHONY : src/card.cpp.i
+
+src/card.s: src/card.cpp.s
+.PHONY : src/card.s
+
+# target to generate assembly for a file
+src/card.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/card.cpp.s
+.PHONY : src/card.cpp.s
+
+src/deck.obj: src/deck.cpp.obj
+.PHONY : src/deck.obj
+
+# target to build an object file
+src/deck.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/deck.cpp.obj
+.PHONY : src/deck.cpp.obj
+
+src/deck.i: src/deck.cpp.i
+.PHONY : src/deck.i
+
+# target to preprocess a source file
+src/deck.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/deck.cpp.i
+.PHONY : src/deck.cpp.i
+
+src/deck.s: src/deck.cpp.s
+.PHONY : src/deck.s
+
+# target to generate assembly for a file
+src/deck.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/deck.cpp.s
+.PHONY : src/deck.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -152,53 +224,29 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/modules/card.obj: src/modules/card.cpp.obj
-.PHONY : src/modules/card.obj
+src/player.obj: src/player.cpp.obj
+.PHONY : src/player.obj
 
 # target to build an object file
-src/modules/card.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/modules/card.cpp.obj
-.PHONY : src/modules/card.cpp.obj
+src/player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/player.cpp.obj
+.PHONY : src/player.cpp.obj
 
-src/modules/card.i: src/modules/card.cpp.i
-.PHONY : src/modules/card.i
-
-# target to preprocess a source file
-src/modules/card.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/modules/card.cpp.i
-.PHONY : src/modules/card.cpp.i
-
-src/modules/card.s: src/modules/card.cpp.s
-.PHONY : src/modules/card.s
-
-# target to generate assembly for a file
-src/modules/card.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/modules/card.cpp.s
-.PHONY : src/modules/card.cpp.s
-
-src/modules/enums.obj: src/modules/enums.cpp.obj
-.PHONY : src/modules/enums.obj
-
-# target to build an object file
-src/modules/enums.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/modules/enums.cpp.obj
-.PHONY : src/modules/enums.cpp.obj
-
-src/modules/enums.i: src/modules/enums.cpp.i
-.PHONY : src/modules/enums.i
+src/player.i: src/player.cpp.i
+.PHONY : src/player.i
 
 # target to preprocess a source file
-src/modules/enums.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/modules/enums.cpp.i
-.PHONY : src/modules/enums.cpp.i
+src/player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/player.cpp.i
+.PHONY : src/player.cpp.i
 
-src/modules/enums.s: src/modules/enums.cpp.s
-.PHONY : src/modules/enums.s
+src/player.s: src/player.cpp.s
+.PHONY : src/player.s
 
 # target to generate assembly for a file
-src/modules/enums.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/modules/enums.cpp.s
-.PHONY : src/modules/enums.cpp.s
+src/player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/player.cpp.s
+.PHONY : src/player.cpp.s
 
 # Help Target
 help:
@@ -209,15 +257,21 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... black-jack
+	@echo ... src/blackjack.obj
+	@echo ... src/blackjack.i
+	@echo ... src/blackjack.s
+	@echo ... src/card.obj
+	@echo ... src/card.i
+	@echo ... src/card.s
+	@echo ... src/deck.obj
+	@echo ... src/deck.i
+	@echo ... src/deck.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
-	@echo ... src/modules/card.obj
-	@echo ... src/modules/card.i
-	@echo ... src/modules/card.s
-	@echo ... src/modules/enums.obj
-	@echo ... src/modules/enums.i
-	@echo ... src/modules/enums.s
+	@echo ... src/player.obj
+	@echo ... src/player.i
+	@echo ... src/player.s
 .PHONY : help
 
 

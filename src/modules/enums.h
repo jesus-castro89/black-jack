@@ -1,4 +1,0 @@
-#ifndef BLACK_JACK_ENUMS_H
-#define BLACK_JACK_ENUMS_H
-
-#endif //BLACK_JACK_ENUMS_H

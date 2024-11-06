@@ -1,8 +1,9 @@
-#include <iostream>
-#include "modules/card.h"
-
-using namespace std;
+#include "blackjack.cpp"
 
 int main() {
-    Card card1={Suite::HEARTS, 10};
+
+    BlackJack blackJack;
+    blackJack.showTable();
+    blackJack.showWinner();
+    return 0;
 }

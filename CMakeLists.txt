@@ -5,7 +5,13 @@ project(black-jack)
 # Definimos la versión de C++ que vamos a utilizar
 set(CMAKE_CXX_STANDARD 20)
 add_executable(black-jack src/main.cpp
-        src/modules/enums.cpp
-        src/modules/enums.h
-        src/modules/card.cpp
-        src/modules/card.h)
+        src/card.cpp
+        src/player.cpp
+        src/deck.cpp
+        src/blackjack.cpp
+        src/enums.h
+        src/card.h
+        src/suite.h
+        src/figure.h
+        src/winner.h
+)
