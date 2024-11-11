@@ -1,33 +1,44 @@
-#include "card.h"
-#include <string>
-#include <vector>
-#include <iostream>
+#include "player.h"
 
-// using namespace std; // Evitar el uso de using namespace en archivos de implementación
+/**
+ * @brief Constructor de la clase Player
+ * @param name Nombre del jugador
+ * @return Player
+ * @code
+ * Player player("Juan");
+ * @endcode
+ */
+Player::Player(std::string name) : name(std::move(name)) {
 
-struct Player {
+    hand.reserve(2);
+}
 
-    std::string name;
-    std::vector<Card> hand;
-    int score = 0;
+/**
+ * @brief Añade una carta a la mano del jugador
+ * @param card Carta a añadir
+ * @return void
+ * @code
+ * player.addCard(card);
+ * @endcode
+ */
+void Player::addCard(Card card) {
 
-    explicit Player(std::string name) : name(std::move(name)) {
+    hand.push_back(card);
+    score += card.value;
+}
 
-        hand.reserve(2);
+/**
+ * @brief Muestra la mano del jugador
+ * @return void
+ * @code
+ * player.showHand();
+ * @endcode
+ */
+void Player::showHand() const {
+
+    std::string handStr = "La mano de " + name + " es: ";
+    for (auto &card: hand) {
+        handStr += card.getCard() + " ";
     }
-
-    void addCard(Card card) {
-
-        hand.push_back(card);
-        score += card.value;
-    }
-
-    void showHand() const {
-
-        std::string handStr = "La mano de " + name + " es: ";
-        for (auto &card: hand) {
-            handStr += card.getCard() + " ";
-        }
-        std::cout << handStr << std::endl;
-    }
-};
+    std::cout << handStr << std::endl;
+}

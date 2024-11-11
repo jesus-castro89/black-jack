@@ -1,67 +1,65 @@
-#include "deck.cpp"
+#include "blackjack.h"
+#include "deck.h"
+#include <string>
+#include <iostream>
 
-struct BlackJack {
+using namespace std;
 
-    Player player = Player("Jugador");
-    Player dealer = Player("Dealer");
-    Deck deck;
+BlackJack::BlackJack() {
 
-    BlackJack() {
+    deck.shuffle();
+    player.addCard(deck.draw());
+    player.addCard(deck.draw());
+    dealer.addCard(deck.draw());
+    dealer.addCard(deck.draw());
+}
 
-        deck.shuffle();
-        player.addCard(deck.draw());
-        player.addCard(deck.draw());
-        dealer.addCard(deck.draw());
-        dealer.addCard(deck.draw());
-    };
+void BlackJack::showTable() const {
 
-    void showTable() {
+    player.showHand();
+    dealer.showHand();
+}
 
-        player.showHand();
-        dealer.showHand();
-    }
+void BlackJack::playerTurn() {
 
-    void playerTurn() {
+}
 
-    }
+void BlackJack::dealerTurn() {
 
-    void dealerTurn() {
+}
 
-    }
+[[nodiscard]] Winner BlackJack::getWinner() const {
 
-    [[nodiscard]] Winner getWinner() const {
-
-        if (player.score > 21) {
-            return Winner::DEALER;
+    if (player.score > 21) {
+        return Winner::DEALER;
+    } else {
+        if (player.score == 21) {
+            return Winner::PLAYER;
         } else {
-            if (player.score == 21) {
+            if (player.score > dealer.score) {
                 return Winner::PLAYER;
+            } else if (player.score < dealer.score) {
+                return Winner::DEALER;
             } else {
-                if (player.score > dealer.score) {
-                    return Winner::PLAYER;
-                } else if (player.score < dealer.score) {
-                    return Winner::DEALER;
-                } else {
-                    return Winner::DRAW;
-                }
+                return Winner::DRAW;
             }
         }
     }
+}
 
-    void showWinner() const {
+void BlackJack::showWinner() const {
 
-        string winner = "El ganador es: ";
-        switch (getWinner()) {
-            case Winner::PLAYER:
-                winner += player.name;
-                break;
-            case Winner::DEALER:
-                winner += dealer.name;
-                break;
-            case Winner::DRAW:
-                winner += "Empate";
-                break;
-        }
-        cout << winner << endl;
+    string winner = "El ganador es: ";
+    switch (getWinner()) {
+        case Winner::PLAYER:
+            winner += player.name;
+            break;
+        case Winner::DEALER:
+            winner += dealer.name;
+            break;
+        case Winner::DRAW:
+            winner += "Empate";
+            break;
     }
-};
+    cout << winner << endl;
+}
