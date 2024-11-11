@@ -7,7 +7,7 @@
  * Winner winner = Winner::PLAYER;
  * @endcode
  */
-enum Winner {
+enum class Winner {
     /**
      * @brief Jugador
      * @code

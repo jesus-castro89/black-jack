@@ -11,8 +11,9 @@ struct Player {
     std::string name;
     std::vector<Card> hand;
     int score = 0;
+    bool isDealer;
 
-    explicit Player(std::string name);
+    explicit Player(std::string name, bool isDealer = true);
 
     void addCard(Card card);
 

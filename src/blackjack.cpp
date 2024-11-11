@@ -5,6 +5,10 @@
 
 using namespace std;
 
+int money = 100;
+
+int* moneyPtr = &money;
+
 BlackJack::BlackJack() {
 
     deck.shuffle();
@@ -12,6 +16,40 @@ BlackJack::BlackJack() {
     player.addCard(deck.draw());
     dealer.addCard(deck.draw());
     dealer.addCard(deck.draw());
+    showTable();
+    playerTurn();
+    dealerTurn();
+    showWinner();
+    play();
+}
+
+void BlackJack::play() {
+
+    string option;
+    do {
+
+        cout << "Dinero: " << money << endl;
+        cout << "¿Quieres jugar otra vez? (s/n): ";
+        cin >> option;
+        if (option == "s") {
+
+            deck = Deck();
+            deck.shuffle();
+            player.hand.clear();
+            dealer.hand.clear();
+            player.score = 0;
+            dealer.score = 0;
+            player.addCard(deck.draw());
+            player.addCard(deck.draw());
+            dealer.addCard(deck.draw());
+            dealer.addCard(deck.draw());
+            showTable();
+            playerTurn();
+            dealerTurn();
+            showWinner();
+        }
+    } while (option == "s" && *moneyPtr > 0);
+    cout << "Gracias por jugar" << endl;
 }
 
 void BlackJack::showTable() const {
@@ -22,23 +60,50 @@ void BlackJack::showTable() const {
 
 void BlackJack::playerTurn() {
 
+    string option;
+    if (player.score < 21) {
+        do {
+            cout << "¿Quieres otra carta? (s/n): ";
+            cin >> option;
+            if (option == "s") {
+                player.addCard(deck.draw());
+                player.showHand();
+            }
+            if (player.score > 21) {
+                break;
+            }
+        } while (option == "s");
+    }
 }
 
 void BlackJack::dealerTurn() {
 
+    while (dealer.score < 17) {
+        dealer.addCard(deck.draw());
+    }
+    dealer.showHand();
 }
 
-[[nodiscard]] Winner BlackJack::getWinner() const {
+[[nodiscard]] Winner BlackJack::getWinner() const{
 
     if (player.score > 21) {
-        return Winner::DEALER;
+
+        if (dealer.score > 21) {
+            return Winner::DRAW;
+        } else {
+            *moneyPtr -= 10;
+            return Winner::DEALER;
+        }
     } else {
-        if (player.score == 21) {
+        if (player.score == 21 || dealer.score > 21) {
+            *moneyPtr += 10;
             return Winner::PLAYER;
         } else {
             if (player.score > dealer.score) {
+                *moneyPtr += 10;
                 return Winner::PLAYER;
             } else if (player.score < dealer.score) {
+                *moneyPtr -= 10;
                 return Winner::DEALER;
             } else {
                 return Winner::DRAW;
@@ -47,7 +112,7 @@ void BlackJack::dealerTurn() {
     }
 }
 
-void BlackJack::showWinner() const {
+void BlackJack::showWinner() {
 
     string winner = "El ganador es: ";
     switch (getWinner()) {

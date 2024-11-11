@@ -8,11 +8,13 @@
 
 struct BlackJack {
 
-    Player player = Player("Jugador");
+    Player player = Player("Jugador", false);
     Player dealer = Player("Dealer");
     Deck deck;
 
     BlackJack();
+
+    void play();
 
     void showTable() const;
 
@@ -22,7 +24,7 @@ struct BlackJack {
 
     [[nodiscard]] Winner getWinner() const;
 
-    void showWinner() const;
+    void showWinner();
 };
 
 #endif

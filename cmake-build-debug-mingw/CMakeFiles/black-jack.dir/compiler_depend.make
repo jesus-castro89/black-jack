@@ -675,7 +675,6 @@ CMakeFiles/black-jack.dir/src/main.cpp.obj: D:/C++/black-jack/src/main.cpp \
   C:/Program\ Files/JetBrains/CLion\ 2024.2.0.1/bin/mingw/x86_64-w64-mingw32/include/vadefs.h \
   C:/Program\ Files/JetBrains/CLion\ 2024.2.0.1/bin/mingw/x86_64-w64-mingw32/include/wchar.h \
   C:/Program\ Files/JetBrains/CLion\ 2024.2.0.1/bin/mingw/x86_64-w64-mingw32/include/wctype.h \
-  D:/C++/black-jack/src/blackjack.cpp \
   D:/C++/black-jack/src/blackjack.h \
   D:/C++/black-jack/src/card.h \
   D:/C++/black-jack/src/deck.h \

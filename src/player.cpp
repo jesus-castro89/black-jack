@@ -8,9 +8,10 @@
  * Player player("Juan");
  * @endcode
  */
-Player::Player(std::string name) : name(std::move(name)) {
+Player::Player(std::string name, bool isDealer) : name(std::move(name)) {
 
     hand.reserve(2);
+    this->isDealer = isDealer;
 }
 
 /**
@@ -24,7 +25,24 @@ Player::Player(std::string name) : name(std::move(name)) {
 void Player::addCard(Card card) {
 
     hand.push_back(card);
-    score += card.value;
+    if (!isDealer) {// Para el jugador
+
+        if (card.figure == Figure::ACE) {
+
+            int option;
+            std::cout << "Elige el valor del As: 1 u 11" << std::endl;
+            std::cin >> option;
+            while (option != 1 && option != 11) {
+                std::cout << "Elige el valor del As: 1 u 11" << std::endl;
+                std::cin >> option;
+            }
+            score += option;
+        } else{
+            score += card.value;
+        }
+    }else{// Para el dealer
+        score += card.value;
+    }
 }
 
 /**
