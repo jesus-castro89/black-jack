@@ -1,4 +1,7 @@
 #include "deck.h"
+#include <algorithm>
+#include <random>
+#include <iostream>
 
 using namespace std;
 
@@ -18,7 +21,7 @@ Deck::Deck() {
 
             auto suite = static_cast<Suite>(i);
             auto figure = static_cast<Figure>(j + 2);
-            cards.emplace_back(suite, figure);
+            cards.emplace_back(make_unique<Card>(suite, figure));
         }
     }
 }
@@ -33,7 +36,10 @@ void Deck::shuffle() {
 
     random_device rd;
     mt19937 g(rd());
-    std::shuffle(cards.begin(), cards.end(), g);
+    if (!cards.empty()) {
+
+        std::shuffle(cards.begin(), cards.end(), g);
+    }
 }
 
 /**
@@ -43,17 +49,20 @@ void Deck::shuffle() {
  * @endcode
  * @return Card carta robada
  */
-Card Deck::draw() {
-
+unique_ptr<Card> Deck::draw() {
     random_device rd;
     mt19937 g(rd());
-    uniform_int_distribution<int> distribution(0, (int) cards.size() - 1);
-    int index;
-    Card card = cards[0];
-    do {
-        index = distribution(g);
-        card = cards[index];
-    } while (card.isTaken);
-    card.isTaken = true;
-    return card;
+    uniform_int_distribution<int> distribution(0, static_cast<int>(cards.size()) - 1);
+    unique_ptr<Card> card;
+
+    while (true) {
+        int index = distribution(g);
+        if (index >= 0 && index < cards.size() && cards[index] != nullptr && !cards[index]->isTaken) {
+            card = std::move(cards[index]);
+            card->isTaken = true;
+            return card;
+        } else {
+            cards.erase(cards.begin() + index);
+        }
+    }
 }

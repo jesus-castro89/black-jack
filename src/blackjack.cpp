@@ -2,15 +2,30 @@
 #include "deck.h"
 #include <string>
 #include <iostream>
+#include <codecvt>
+
+#ifdef _WIN32
+
+#include <windows.h>
+
+#endif
 
 using namespace std;
 
 int money = 100;
 
-int* moneyPtr = &money;
+int *moneyPtr = &money;
 
 BlackJack::BlackJack() {
 
+    // Configurar la localización para UTF-8 si se está en Windows o Linux
+#ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
+    // Configurar la localización para UTF-8
+    std::locale::global(std::locale(std::locale(), new std::codecvt_utf8<wchar_t>));
+    std::wcout.imbue(std::locale());
+    //
     deck.shuffle();
     player.addCard(deck.draw());
     player.addCard(deck.draw());
@@ -84,7 +99,7 @@ void BlackJack::dealerTurn() {
     dealer.showHand();
 }
 
-[[nodiscard]] Winner BlackJack::getWinner() const{
+[[nodiscard]] Winner BlackJack::getWinner() const {
 
     if (player.score > 21) {
 
@@ -112,10 +127,11 @@ void BlackJack::dealerTurn() {
     }
 }
 
-void BlackJack::showWinner() {
+void BlackJack::showWinner() const {
 
     string winner = "El ganador es: ";
     switch (getWinner()) {
+
         case Winner::PLAYER:
             winner += player.name;
             break;

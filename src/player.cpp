@@ -1,62 +1,75 @@
 #include "player.h"
+#include <iostream>
+
+using namespace std;
 
 /**
- * @brief Constructor de la clase Player
- * @param name Nombre del jugador
- * @return Player
+ * @brief Constructor del jugador
  * @code
- * Player player("Juan");
+ * Player player("Jugador");
  * @endcode
+ * @param name nombre del jugador
+ * @param isDealer si el jugador es el dealer
+ * @return Player el jugador
  */
-Player::Player(std::string name, bool isDealer) : name(std::move(name)) {
+Player::Player(string name, bool isDealer) : name(std::move(name)), isDealer(isDealer) {
 
     hand.reserve(2);
-    this->isDealer = isDealer;
 }
 
 /**
- * @brief Añade una carta a la mano del jugador
- * @param card Carta a añadir
- * @return void
+ * @brief Añade una carta a la mano
  * @code
  * player.addCard(card);
  * @endcode
+ * @param card carta a añadir
  */
-void Player::addCard(Card card) {
+void Player::addCard(unique_ptr<Card> card) {
 
-    hand.push_back(card);
-    if (!isDealer) {// Para el jugador
+    if (card == nullptr) {
 
-        if (card.figure == Figure::ACE) {
+        cerr << "Error: Attempted to add a null card to the hand." << endl;
+        return;
+    }
+    if (!isDealer) {
+
+        if (card->figure == Figure::ACE) {
 
             int option;
-            std::cout << "Elige el valor del As: 1 u 11" << std::endl;
-            std::cin >> option;
+            cout << "Elige el valor del As: 1 u 11:" << endl;
+            cin >> option;
             while (option != 1 && option != 11) {
-                std::cout << "Elige el valor del As: 1 u 11" << std::endl;
-                std::cin >> option;
+
+                cout << "Elige el valor del As: 1 u 11:" << endl;
+                cin >> option;
             }
             score += option;
-        } else{
-            score += card.value;
+        } else {
+            score += card->value;
         }
-    }else{// Para el dealer
-        score += card.value;
+    } else {
+        score += card->value;
     }
+    hand.push_back(std::move(card));
 }
 
 /**
  * @brief Muestra la mano del jugador
- * @return void
  * @code
  * player.showHand();
  * @endcode
  */
 void Player::showHand() const {
 
-    std::string handStr = "La mano de " + name + " es: ";
-    for (auto &card: hand) {
-        handStr += card.getCard() + " ";
+    string handStr = "La mano de " + name + " es: ";
+    for (const auto &card: hand) {
+
+        if (card != nullptr) {
+
+            handStr += card->getCard() + " ";
+        } else {
+            cerr << "Error: Null card in hand." << endl;
+        }
     }
-    std::cout << handStr << std::endl;
+    cout << handStr << endl;
 }

@@ -24,7 +24,7 @@ struct BlackJack {
 
     [[nodiscard]] Winner getWinner() const;
 
-    void showWinner();
+    void showWinner() const;
 };
 
 #endif

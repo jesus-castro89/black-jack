@@ -3,8 +3,7 @@
 
 #include "card.h"
 #include <vector>
-#include <random>
-#include <algorithm>
+#include <memory>
 
 /**
  * @brief Clase Deck
@@ -19,12 +18,12 @@ struct Deck {
     /**
      * @brief Vector de cartas
      */
-    std::vector<Card> cards;
+    std::vector<std::unique_ptr<Card>> cards;
 
     Deck();
 
     void shuffle();
 
-    Card draw();
+    std::unique_ptr<Card> draw();
 };
 #endif //BLACK_JACK_DECK_H

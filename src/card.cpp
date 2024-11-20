@@ -1,7 +1,9 @@
 #include "card.h"
 
 Card::Card(Suite suite, Figure figure) : suite(suite), figure(figure) {
+
     switch (figure) {
+
         case Figure::TWO:
             value = 2;
             break;
@@ -39,8 +41,10 @@ Card::Card(Suite suite, Figure figure) : suite(suite), figure(figure) {
 }
 
 std::string Card::getCard() const {
+
     std::string cardDisplay;
     switch (figure) {
+
         case Figure::JACK:
             cardDisplay = "J";
             break;
@@ -61,19 +65,21 @@ std::string Card::getCard() const {
 }
 
 std::string Card::getSuiteDisplay() const {
+
     std::string suiteDisplay;
     switch (suite) {
+
         case Suite::HEARTS:
-            suiteDisplay = "(C)";
+            suiteDisplay = "(♥)";
             break;
         case Suite::DIAMONDS:
-            suiteDisplay = "(D)";
+            suiteDisplay = "(♦)";
             break;
         case Suite::CLUBS:
-            suiteDisplay = "(T)";
+            suiteDisplay = "(♣)";
             break;
         case Suite::SPADES:
-            suiteDisplay = "(E)";
+            suiteDisplay = "(♠)";
             break;
     }
     return suiteDisplay;

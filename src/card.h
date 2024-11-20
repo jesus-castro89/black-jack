@@ -1,7 +1,3 @@
-//
-// Created by Jesús Castro on 04/11/2024.
-//
-
 #ifndef BLACK_JACK_CARD_H
 #define BLACK_JACK_CARD_H
 
