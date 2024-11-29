@@ -7,6 +7,7 @@
 #ifdef _WIN32
 
 #include <windows.h>
+#include <fstream>
 
 #endif
 
@@ -26,6 +27,8 @@ BlackJack::BlackJack() {
     std::locale::global(std::locale(std::locale(), new std::codecvt_utf8<wchar_t>));
     std::wcout.imbue(std::locale());
     //
+    cout << "Ingrese su nombre: ";
+    cin >> player.name;
     deck.shuffle();
     player.addCard(deck.draw());
     player.addCard(deck.draw());
@@ -130,6 +133,7 @@ void BlackJack::dealerTurn() {
 void BlackJack::showWinner() const {
 
     string winner = "El ganador es: ";
+    string option;
     switch (getWinner()) {
 
         case Winner::PLAYER:
@@ -143,4 +147,31 @@ void BlackJack::showWinner() const {
             break;
     }
     cout << winner << endl;
+    cout << "¿Quieres guardar la partida? (s/n): " << endl;
+    cin >> option;
+    if (option == "s") {
+        saveFile();
+    }
+}
+
+void BlackJack::loadFile() {
+
+    ifstream file("money.txt");
+    if (file.is_open()) {
+        file >> money;
+        file.close();
+    }
+}
+
+void BlackJack::saveFile() const {
+
+    ofstream file("money.txt", ios::app);
+    Partida partida = Partida(player.name,
+                              player.score,
+                              player.getHand(),
+                              getWinner() == Winner::PLAYER);
+    if (file.is_open()) {
+        file << partida.toString() << endl;
+        file.close();
+    }
 }

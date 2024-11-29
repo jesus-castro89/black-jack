@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/black-jack.dir/src/deck.cpp.obj.d"
   "CMakeFiles/black-jack.dir/src/main.cpp.obj"
   "CMakeFiles/black-jack.dir/src/main.cpp.obj.d"
+  "CMakeFiles/black-jack.dir/src/partida.cpp.obj"
+  "CMakeFiles/black-jack.dir/src/partida.cpp.obj.d"
   "CMakeFiles/black-jack.dir/src/player.cpp.obj"
   "CMakeFiles/black-jack.dir/src/player.cpp.obj.d"
   "black-jack.exe"

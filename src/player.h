@@ -18,6 +18,8 @@ struct Player {
     void addCard(std::unique_ptr<Card> card);
 
     void showHand() const;
+
+    std::string getHand() const;
 };
 
 #endif

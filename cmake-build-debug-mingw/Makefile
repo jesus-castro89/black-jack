@@ -224,6 +224,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/partida.obj: src/partida.cpp.obj
+.PHONY : src/partida.obj
+
+# target to build an object file
+src/partida.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/partida.cpp.obj
+.PHONY : src/partida.cpp.obj
+
+src/partida.i: src/partida.cpp.i
+.PHONY : src/partida.i
+
+# target to preprocess a source file
+src/partida.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/partida.cpp.i
+.PHONY : src/partida.cpp.i
+
+src/partida.s: src/partida.cpp.s
+.PHONY : src/partida.s
+
+# target to generate assembly for a file
+src/partida.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\black-jack.dir\build.make CMakeFiles/black-jack.dir/src/partida.cpp.s
+.PHONY : src/partida.cpp.s
+
 src/player.obj: src/player.cpp.obj
 .PHONY : src/player.obj
 
@@ -269,6 +293,9 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/partida.obj
+	@echo ... src/partida.i
+	@echo ... src/partida.s
 	@echo ... src/player.obj
 	@echo ... src/player.i
 	@echo ... src/player.s

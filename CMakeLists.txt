@@ -17,4 +17,6 @@ add_executable(black-jack src/main.cpp
         src/deck.h
         src/player.h
         src/blackjack.h
+        src/partida.cpp
+        src/partida.h
 )

@@ -73,3 +73,25 @@ void Player::showHand() const {
     }
     cout << handStr << endl;
 }
+
+/**
+ * @brief Obtiene la mano del jugador
+ * @code
+ * string hand = player.getHand();
+ * @endcode
+ * @return string la mano del jugador
+ */
+string Player::getHand() const {
+
+    string handStr = "La mano de " + name + " es: ";
+    for (const auto &card: hand) {
+
+        if (card != nullptr) {
+
+            handStr += card->getCard() + " ";
+        } else {
+            cerr << "Error: Null card in hand." << endl;
+        }
+    }
+    return handStr;
+}
