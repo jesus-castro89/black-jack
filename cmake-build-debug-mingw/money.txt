@@ -1,0 +1,8 @@
+Jugador: Jugador, Puntaje: 21
+Mano: La mano de Jugador es: 4(♣) 2(♦) 7(♣) 8(♠) , Gano: Si
+Jugador: Mario, Puntaje: 17
+Mano: La mano de Mario es: J(♦) 7(♥) , Gano: No
+Jugador: Ángel, Puntaje: 20
+Mano: La mano de Ángel es: Q(♥) Q(♦) , Gano: Si
+Jugador: Ángel, Puntaje: 18
+Mano: La mano de Ángel es: J(♠) 8(♣) , Gano: No
